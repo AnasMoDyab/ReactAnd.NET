@@ -1,0 +1,15 @@
+D:\Udemy\.NET And React\Reactivities\Persistence\bin\Debug\net5.0\Persistence.deps.json
+D:\Udemy\.NET And React\Reactivities\Persistence\bin\Debug\net5.0\Persistence.dll
+D:\Udemy\.NET And React\Reactivities\Persistence\bin\Debug\net5.0\ref\Persistence.dll
+D:\Udemy\.NET And React\Reactivities\Persistence\bin\Debug\net5.0\Persistence.pdb
+D:\Udemy\.NET And React\Reactivities\Persistence\bin\Debug\net5.0\Domain.dll
+D:\Udemy\.NET And React\Reactivities\Persistence\bin\Debug\net5.0\Domain.pdb
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.csprojAssemblyReference.cache
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.AssemblyInfoInputs.cache
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.AssemblyInfo.cs
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.csproj.CoreCompileInputs.cache
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.csproj.CopyComplete
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.dll
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\ref\Persistence.dll
+D:\Udemy\.NET And React\Reactivities\Persistence\obj\Debug\net5.0\Persistence.pdb
