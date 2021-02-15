@@ -9,7 +9,7 @@ namespace Persistence
         {
         }
 
-        public DbSet<Activity> Activityes { get; set; }
+        public DbSet<Activity> Activities { get; set; }
     }
 
 }
