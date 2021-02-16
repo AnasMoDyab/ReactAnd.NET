@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
-import { List, Header } from 'semantic-ui-react';
+import { List, Header, Container } from 'semantic-ui-react';
 import {Activity} from '../models/activity'
-
+import NavBar from '../layout/NavBar'
 
 function App() {
 const [activities, setActivities]= useState<Activity[]>([]); // pass type of activities to usestate<Activity[]> Activity is the interface
@@ -23,12 +23,11 @@ useEffect(()=> {
 
 
   return (
-    <div>
-      <Header 
-      as='h2' icon='users' content='Reactactivities'
-  
-      />
-        <List>
+    <>
+      <NavBar />
+
+      <Container style={{marginTop: '7em'}}>
+      <List>
           {activities.map(activity=> {
               return <List.Item key={activity.id}>
                 {activity.title}
@@ -37,7 +36,11 @@ useEffect(()=> {
 
         </List>
 
-    </div>
+      </Container>
+      
+      
+
+    </>
   );
 }
 
