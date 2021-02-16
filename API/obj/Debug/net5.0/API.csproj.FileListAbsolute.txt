@@ -60,3 +60,5 @@ D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\runtimes\win-x64\nativ
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Humanizer.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\MediatR.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

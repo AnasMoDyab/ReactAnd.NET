@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DrYJ3ENNSJx5keyxkYyNLdlrzqtw6V3MQL6Z6d28M5ieHf4TAK8KFHzVdO+T6t41RqOBcgoB29DeJm8wwfhZgQ==",
+  "dgSpecHash": "SWZshMRFuQtLjelwg9tts+LRjS4ii5KCMe/T0UMhrBsfDIll2aLr10C/iNV0SzDvAOktQqoaASvmxTf9WKKzVw==",
   "success": true,
   "projectFilePath": "D:\\Udemy\\.NET And React\\Reactivities\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\anasd\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.1\\microsoft.data.sqlite.core.5.0.1.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.1\\microsoft.entityframeworkcore.5.0.1.nupkg.sha512",
