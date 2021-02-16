@@ -62,3 +62,5 @@ D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Humanizer.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\MediatR.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\AutoMapper.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

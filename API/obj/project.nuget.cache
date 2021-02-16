@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "g07YEefKJ4jEwxeaWFbG/8DVXhbWYf18PRj/0REYOun4tGq+Zi4Jp85LPJ4wVb0t8OA28S/KEdbgvHC0yjSDQA==",
+  "dgSpecHash": "zhiUM5V9NQJcBiGig2U/BGnH/7qTbHo0CXNR4A+rMelRCYjq0Y7FMewRI6B+TOJ77lyX7TT7NfY5qAnsj/dDtw==",
   "success": true,
   "projectFilePath": "D:\\Udemy\\.NET And React\\Reactivities\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\anasd\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
@@ -40,7 +42,8 @@
     "C:\\Users\\anasd\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
-    "C:\\Users\\anasd\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\anasd\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
