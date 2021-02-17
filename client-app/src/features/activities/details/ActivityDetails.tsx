@@ -1,28 +1,29 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Button, Card, Image, Modal } from 'semantic-ui-react'
-import { Activity } from '../../../app/models/activity';
+import LoadingComponent from '../../../app/layout/LoadingComponent';
+import { useStore } from '../../../app/stores/store';
 
 
 
-interface Props {
-    activity: Activity;
-    cancelSelectActivity: ()=> void;
-    openForm: (id: string)=> void;
-    openModel: ()=> void;
-    closeModel: ()=> void;
-    modelOpen: boolean;
-
-}
 
 
-export default function ActivitDetails({activity, cancelSelectActivity, openForm, openModel, closeModel, modelOpen}:Props) {
 
+export default observer( function ActivitDetails() {
+
+const {activityStore} = useStore();
+const {selectedActivity: activity, openForm,
+     modelOpen, modelClose, openModel, cancelSelectedActivity}= activityStore;
+
+  
+
+if(!activity) return <LoadingComponent />;
 
     return (
         <Modal
-        onClose={closeModel}
-        onOpen={openModel}
-        open={modelOpen}
+        onClose={modelClose}
+        onOpen={modelOpen}
+        open={openModel}
         size= 'tiny'
       >
         <Modal.Content >
@@ -40,7 +41,7 @@ export default function ActivitDetails({activity, cancelSelectActivity, openForm
             <Card.Content extra>
                 <Button.Group widths="2" >
                     <Button onClick={()=> openForm(activity.id)}  basic color='blue' content='Edit'/>
-                    <Button  onClick={cancelSelectActivity} basic color='grey' content='Cancel'/>
+                    <Button  onClick={cancelSelectedActivity} basic color='grey' content='Cancel'/>
                 </Button.Group>
             </Card.Content>
         </Card>
@@ -70,4 +71,4 @@ export default function ActivitDetails({activity, cancelSelectActivity, openForm
     );
 
 
-}
+})

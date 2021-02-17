@@ -1,21 +1,17 @@
+import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, useState } from 'react';
 import { Button, Form, Modal, Segment } from 'semantic-ui-react';
 import { Activity } from '../../../app/models/activity';
+import { useStore } from '../../../app/stores/store';
 
 
-interface Props {
 
-    activity: Activity | undefined;
-    closeForm :  ()=> void; 
-    openModel: ()=> void;
-    closeModel: ()=> void;
-    modelOpen: boolean;
-    createOrEdit: (activity: Activity)=> void;
-    submitting: boolean;
-}
 
-export default function ActivityForm({activity: selectedActivity,
-     closeForm, openModel, closeModel, modelOpen, createOrEdit, submitting}: Props){
+export default observer( function  ActivityForm(){
+
+    const {activityStore} = useStore();
+    const {selectedActivity,closeForm, modelOpen, modelClose,
+         openModel, createActivity, updateActivity, loading}= activityStore;
 
 
     const initialState = selectedActivity ?? {
@@ -31,8 +27,7 @@ export default function ActivityForm({activity: selectedActivity,
     const [activity, setActivity]= useState(initialState);
 
     function handleSubmit(){
-
-      createOrEdit(activity);
+        activity.id ? updateActivity(activity) : createActivity(activity); 
     }
 
     function handleInputChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>){
@@ -44,10 +39,10 @@ export default function ActivityForm({activity: selectedActivity,
  
 
         <Modal
-        onClose={closeModel}
-        onOpen={openModel}
-        open={modelOpen}
-        size= 'tiny'
+            onClose={modelClose}
+            onOpen={modelOpen}
+            open={openModel}
+            size= 'tiny'
       >
         <Modal.Content >
             <Segment clearing>
@@ -59,7 +54,7 @@ export default function ActivityForm({activity: selectedActivity,
                         <Form.Input placeholder='City' value={activity.city} name='city' onChange={handleInputChange} />
                         <Form.Input placeholder='Venue' value={activity.venue} name='venue' onChange={handleInputChange} />
 
-                        <Button loading={submitting} floated="right" positive type="submit" content="Submit"/>
+                        <Button loading={loading} floated="right" positive type="submit" content="Submit"/>
                         <Button onClick={closeForm} floated="right"  type="button"  content="Cancel"/>
 
                 </Form>
@@ -83,4 +78,4 @@ export default function ActivityForm({activity: selectedActivity,
             </Form>
         </Segment> */
     )
-}
+})
