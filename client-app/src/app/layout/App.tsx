@@ -4,6 +4,8 @@ import axios from 'axios';
 import { List, Header, Container } from 'semantic-ui-react';
 import {Activity} from '../models/activity'
 import NavBar from '../layout/NavBar'
+import ActivityDashboard from '../../features/activities/dachboard/ActivityDashboard'
+
 
 function App() {
 const [activities, setActivities]= useState<Activity[]>([]); // pass type of activities to usestate<Activity[]> Activity is the interface
@@ -27,14 +29,7 @@ useEffect(()=> {
       <NavBar />
 
       <Container style={{marginTop: '7em'}}>
-      <List>
-          {activities.map(activity=> {
-              return <List.Item key={activity.id}>
-                {activity.title}
-                </List.Item>
-          })}
-
-        </List>
+    <ActivityDashboard  activities={activities}/>
 
       </Container>
       
