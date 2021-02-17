@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridColumn, List } from 'semantic-ui-react';
+import { Grid, List } from 'semantic-ui-react';
 import { Activity } from '../../../app/models/activity';
 import ActivityList from "./ActiviytList"
 import ActivityDetails from '../../activities/details/ActivityDetails'
@@ -18,40 +18,49 @@ interface Props{
     openModel: ()=> void;
     closeModel: ()=> void;
     modelOpen: boolean;
+    createOrEdit: (activity: Activity)=> void;
+    deleteActivity: (id:string) => void;
 }
 
 
 
 export default function ActivityDashboard({activities, selectActivity,
      selectedActivity, cancelSelectActivity, editMode, openForm,
-      closeForm, openModel, closeModel, modelOpen}: Props){
+      closeForm, openModel, closeModel, modelOpen, createOrEdit, deleteActivity}: Props){
 
     return (
         <Grid>
             <Grid.Column  reversed='mobile' width="15">
                 <List>
-                    < ActivityList activities={activities} selectActivity={selectActivity}   />
+                    < ActivityList 
+                        activities={activities}
+                        selectActivity={selectActivity} 
+                        deleteActivity={deleteActivity}
+                          />
                 </List>
             </Grid.Column>
             <Grid.Column >
                 {selectedActivity &&  !editMode &&
-                <ActivityDetails activity={selectedActivity} 
-                cancelSelectActivity={cancelSelectActivity}
-                openForm={openForm}
-                openModel={openModel}
-                closeModel={closeModel}
-                modelOpen= {modelOpen}
+                
+                <ActivityDetails 
+                    activity={selectedActivity} 
+                    cancelSelectActivity={cancelSelectActivity}
+                    openForm={openForm}
+                    openModel={openModel}
+                    closeModel={closeModel}
+                    modelOpen= {modelOpen}
 
                 
                 />}
                 {editMode && 
 
                 <ActivityForm 
-                activity={selectedActivity}
-                closeForm={closeForm}
-                openModel={openModel}
-                closeModel={closeModel}
-                modelOpen= {modelOpen}
+                    activity={selectedActivity}
+                    closeForm={closeForm}
+                    openModel={openModel}
+                    closeModel={closeModel}
+                    modelOpen= {modelOpen}
+                    createOrEdit={createOrEdit}
                 
                 />
                  }

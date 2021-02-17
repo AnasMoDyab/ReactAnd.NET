@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
 import axios from 'axios';
-import { List, Header, Container } from 'semantic-ui-react';
+import {  Container } from 'semantic-ui-react';
 import {Activity} from '../models/activity'
 import NavBar from '../layout/NavBar'
 import ActivityDashboard from '../../features/activities/dachboard/ActivityDashboard'
-
+import {v4 as uuid} from 'uuid';
 
 function App() {
 const [activities, setActivities]= useState<Activity[]>([]); // pass type of activities to usestate<Activity[]> Activity is the interface
@@ -49,6 +48,18 @@ useEffect(()=> {
    setOpenModel(false)
 }
 
+function handleCreateOrEditActivity(activity: Activity){
+  activity.id 
+      ? setActivities([...activities.filter(x => x.id !== activity.id), activity])
+      : setActivities([...activities, {...activity, id: uuid()}]);
+  setEditMode(false);
+  setSelectedActivity(activity);
+}
+
+function handleDeleteActivity(id: string){
+  setActivities([...activities.filter(x=> x.id !==id)])
+}
+
 
   return (
     <>
@@ -66,6 +77,8 @@ useEffect(()=> {
       openModel={handleModelOpen}
       closeModel= {handleModelClose}
       modelOpen={openModel}
+      createOrEdit={handleCreateOrEditActivity}
+      deleteActivity= {handleDeleteActivity}
       />
 
       </Container>
