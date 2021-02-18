@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid, List } from 'semantic-ui-react';
-import { Activity } from '../../../app/models/activity';
 import ActivityList from "./ActiviytList"
-import ActivityDetails from '../../activities/details/ActivityDetails'
-import ActivityForm from '../../activities/form/ActivityForm'
 import { useStore } from '../../../app/stores/store';
 import { observer } from 'mobx-react-lite';
+import LoadingComponent from '../../../app/layout/LoadingComponent';
 
 
 
@@ -15,23 +13,26 @@ import { observer } from 'mobx-react-lite';
 export default observer( function ActivityDashboard(){
 
         const {activityStore}= useStore();
-        const {selectedActivity, editMode}= activityStore
+        const {loadActivities, activityRegister}=activityStore;
+        useEffect(()=> {
+        if(activityRegister.size <= 1)
+            loadActivities();
+
+        },[activityRegister.size, loadActivities]);
+
+
+
+    if(activityStore.loadingInitial) return <LoadingComponent content= 'Loading app ...' />
 
     return (
         <Grid>
-            <Grid.Column  reversed='mobile' width="15">
+            <Grid.Column  reversed='mobile' width="10">
                 <List>
                     < ActivityList  />
                 </List>
             </Grid.Column>
-            <Grid.Column >
-                {selectedActivity &&  !editMode &&          
-                <ActivityDetails  />
-                    }
-                {editMode && 
-
-                <ActivityForm />
-                 }
+            <Grid.Column  reversed='mobile'  width="6" >
+                    <h2> Filter</h2>
             </Grid.Column>
 
 

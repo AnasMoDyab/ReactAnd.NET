@@ -1,20 +1,23 @@
 import { observer } from 'mobx-react-lite';
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { Button, Form, Modal, Segment } from 'semantic-ui-react';
+import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { Activity } from '../../../app/models/activity';
 import { useStore } from '../../../app/stores/store';
+import {v4 as uuid} from 'uuid';
 
 
 
 
 export default observer( function  ActivityForm(){
-
+    const history= useHistory();
     const {activityStore} = useStore();
-    const {selectedActivity,closeForm, modelOpen, modelClose,
-         openModel, createActivity, updateActivity, loading}= activityStore;
+    const { modelOpen, modelClose,
+         openModel, createActivity, updateActivity, loadActivity,loading, loadingInitial}= activityStore;
+    const{id}= useParams<{id:string}>();
 
-
-    const initialState = selectedActivity ?? {
+    const [activity, setActivity]= useState({
         id: '',
         title: '',
         category:'',
@@ -22,22 +25,49 @@ export default observer( function  ActivityForm(){
         date:'',
         city:'',
         venue:''
-    } 
+    });
 
-    const [activity, setActivity]= useState(initialState);
+
+    useEffect(()=> {
+        if(id) loadActivity(id).then(activity => setActivity(activity!)) // activity! => '!' meean activity could be undefined
+    }, [id, loadActivity])
 
     function handleSubmit(){
-        activity.id ? updateActivity(activity) : createActivity(activity); 
-    }
+       if (activity.id.length === 0 ){ 
+       let newActivity = {
+           ...activity, 
+           id: uuid()
+       }
+       createActivity(activity).then(()=>history.push(`/activities/${newActivity.id}`));
+        } else {
+        
+        updateActivity(activity).then(()=>history.push(`/activities/${activity.id}`)) ;
+        }
+}
 
     function handleInputChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>){
             const {name, value}= event.target;
             setActivity({...activity, [name]: value})
     }
 
-    return (
- 
+    if(loadingInitial) return <LoadingComponent content=" Loading app"/>
 
+    return (
+        <Segment clearing>
+        <Form onSubmit={handleSubmit} autoComplete="off">
+                <Form.Input placeholder='Title' value={activity.title} name='title' onChange={handleInputChange} />
+                <Form.TextArea placeholder='Description' value={activity.description} name='description' onChange={handleInputChange}/>
+                <Form.Input placeholder='Category' value={activity.category} name='category' onChange={handleInputChange}/>
+                <Form.Input type='date' placeholder='Date' value={activity.date} name='date' onChange={handleInputChange} />
+                <Form.Input placeholder='City' value={activity.city} name='city' onChange={handleInputChange} />
+                <Form.Input placeholder='Venue' value={activity.venue} name='venue' onChange={handleInputChange} />
+
+                <Button loading={loading} floated="right" positive type="submit" content="Submit"/>
+                <Button as={Link} to="/activities"  floated="right"  type="button"  content="Cancel"/>
+
+        </Form>
+        </Segment>
+/* 
         <Modal
             onClose={modelClose}
             onOpen={modelOpen}
@@ -60,22 +90,9 @@ export default observer( function  ActivityForm(){
                 </Form>
             </Segment>
         </Modal.Content>
-      </Modal>
+      </Modal> */
 
 
-    /*    <Segment clearing>
-            <Form>
-                <Form.Input placeholder='Title' />
-                <Form.TextArea placeholder='Description' />
-                <Form.Input placeholder='Category' />
-                <Form.Input placeholder='Date' />
-                <Form.Input placeholder='City' />
-                <Form.Input placeholder='Venue' />
-
-                <Button floated="right" positive type="submit" content="Submit"/>
-                <Button onClick={closeForm} floated="right"  type="button"  content="Cancel"/>
-
-            </Form>
-        </Segment> */
+           
     )
 })
