@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "RHh89LNnkLinG7LCmM/7mBrFIUATlJNX5Zht5ujleJYgm4raZ/R01sUK72ZoIrxwXA3fqSDP9gTjUtokU1eP7Q==",
+  "dgSpecHash": "D7RD1cPp06WWxNTfkaC6N8KgKSWVd6iIGiS0GWpz0/SH0GRPHePADye9ZglkFgORTIBfkTWZ/ZLcrV2SSHNu/A==",
   "success": true,
   "projectFilePath": "D:\\Udemy\\.NET And React\\Reactivities\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anasd\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.3.0\\fluentvalidation.dependencyinjectionextensions.9.3.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
