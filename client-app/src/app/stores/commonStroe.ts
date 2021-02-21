@@ -6,6 +6,8 @@ import { useContext } from 'react';
 
 export default class CommonStore {
     error: ServerErrors | null = null;
+    token: string | null= null;
+    appLoaded = false;
 
 
     constructor(){
@@ -15,6 +17,14 @@ export default class CommonStore {
 
     setServerError=(error: ServerErrors)=> {
         this.error= error;
+    }
+    setToken = (token :string | null)=>{
+        if(token ) window.localStorage.setItem('jwt', token);
+        this.token = token;
+    }
+
+    setApploaded = ()=> {
+        this.appLoaded= true;
     }
 
 }

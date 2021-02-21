@@ -7,9 +7,9 @@ export interface User {
 
 
 export interface UserFormValue {
-    emai: string;
+    email: string;
     password: string;
-    displayName: string;
+    displayName?: string;
     username?: string;
 
 }
