@@ -32,7 +32,7 @@ return (
               <Route key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} />
               <Route path="/errors" component={TestErrors} />
               <Route path="/server-error" component={ServerError} />
-              <Route path="/login" component={LoginForm} />
+            <Route path="/login" component={LoginForm} />
               <Route component={NotFound}/>
             
             </Switch>
