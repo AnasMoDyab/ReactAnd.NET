@@ -12,9 +12,11 @@ import {ToastContainer} from 'react-toastify'
 import NotFound from '../../features/errors/NotFound'
 import ServerError from '../../features/errors/ServerErrors'
 import LoginForm from '../../features/users/LoginForm';
-import UserStore from '../stores/userStore';
 import { useStore } from '../stores/store';
 import LoadingComponent from './LoadingComponent';
+import ModalContainer from '../common/modals/ModalContainer';
+
+
 
 function App() {
 const location = useLocation();
@@ -34,6 +36,7 @@ if(!commonStore.appLoaded) return <LoadingComponent content= "Loafin app .." />
 return (
   <>
  <ToastContainer position='bottom-right' hideProgressBar />
+  <ModalContainer />
     <Route exact path='/' component={HomePage} />
     <Route
       path={'/(.+)'}
