@@ -79,3 +79,5 @@ D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\System.IdentityModel.T
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Infrastructure.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Infrastructure.pdb
