@@ -29,8 +29,8 @@ namespace Application.Activities
 				//	if(activity == null) return null;
                 _context.Remove(activity);
 
-					var result = await _context.SaveChangesAsync();
-					if(result == null) return Result<Unit>.Failure("Failed to delete the activity");
+					var result = await _context.SaveChangesAsync() > 0;
+					if(!result) return Result<Unit>.Failure("Failed to delete the activity");
 					
 
                 return Result<Unit>.Success(Unit.Value);
