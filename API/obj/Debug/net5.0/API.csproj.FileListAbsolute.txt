@@ -81,3 +81,5 @@ D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Microsoft.IdentityMode
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Infrastructure.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Infrastructure.pdb
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\CloudinaryDotNet.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Newtonsoft.Json.dll
