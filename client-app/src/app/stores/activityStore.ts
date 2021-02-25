@@ -16,16 +16,17 @@ export default class ActivityStore {
     constructor() {
         makeAutoObservable(this)
     }
-
+        // sort array 
     get activitiesByDate() {
         return Array.from(this.activityRegistry.values()).sort((a, b) =>
-           a.date!.getTime()- b.date!.getTime());
+           a.date!.getTime() - b.date!.getTime());
     }
 
     get groupedActivities(){
         return Object.entries(
             this.activitiesByDate.reduce((activities, activity) => {
                 const date = format(activity.date!, 'dd MMM yyyy') ;
+                
                 activities[date] = activities[date] ? [...activities[date], activity] : [activity];
           
                 return activities;
@@ -83,6 +84,7 @@ export default class ActivityStore {
     }
 
     private getActivity = (id: string) => {
+        console.log("reg", this.activityRegistry.get(id))
         return this.activityRegistry.get(id);
     }
 
