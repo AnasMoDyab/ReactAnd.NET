@@ -16,6 +16,8 @@ export default observer(function ProfilePage() {
         loadProfile(username);
     }, [loadProfile, username])
 
+  
+
     if (loadingProfile) return <LoadingComponent content='Loading profile...' />
 
     return (
@@ -24,10 +26,9 @@ export default observer(function ProfilePage() {
                 {profile &&
                     <>
                         <ProfileHeader profile={profile} />
-                        <ProfileContent profile={profile}  />
-                    </>
-                }
+                        <ProfileContent profile={profile} />
+                    </>}
             </Grid.Column>
         </Grid>
     )
-})
+ })
