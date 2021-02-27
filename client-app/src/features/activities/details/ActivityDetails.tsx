@@ -16,14 +16,15 @@ import ActivityDetailedSidebar from './ActivityDetailedSidbar';
 export default observer( function ActivitDetails() {
 
 const {activityStore} = useStore();
-const {selectedActivity: activity, loadActivity, loadingInitial}= activityStore;
+const {selectedActivity: activity, loadActivity, loadingInitial, clearSelectActivity}= activityStore;
 
   const {id} = useParams<{id: string}>();
   useEffect(()=> {
       if(id){
             loadActivity(id);
       }
-  }, [id, loadActivity]);
+      return ()=> clearSelectActivity();
+  }, [id, loadActivity, clearSelectActivity]);
 
 if(loadingInitial || !activity) return <LoadingComponent />;
 

@@ -187,4 +187,8 @@ export default class ActivityStore {
             })
         }
     }
+
+    clearSelectActivity =()=> {
+        this.selectedActivity= undefined;
+    }
 }
