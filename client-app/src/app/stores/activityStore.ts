@@ -84,7 +84,6 @@ export default class ActivityStore {
     }
 
     private getActivity = (id: string) => {
-        console.log("reg", this.activityRegistry.get(id))
         return this.activityRegistry.get(id);
     }
 
