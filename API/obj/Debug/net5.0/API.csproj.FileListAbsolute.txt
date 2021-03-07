@@ -83,3 +83,6 @@ D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Infrastructure.pdb
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\CloudinaryDotNet.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\appsettings.json
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Npgsql.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Udemy\.NET And React\Reactivities\API\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
