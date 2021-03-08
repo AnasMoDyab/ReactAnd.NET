@@ -7,12 +7,12 @@ interface Props extends RouteProps {
 }
 
 export default function PrivateRoute ({component : Component, ...rest}: Props){
-    const {userStore: {isloggedIn}} = useStore();
+    const {userStore: {isLoggedIn}} = useStore();
 
     return (
         <Route 
             {...rest}
-            render={(props) => isloggedIn ? <Component {...props} /> : <Redirect to='/' />}
+            render={(props) => isLoggedIn ? <Component {...props} /> : <Redirect to='/' />}
         />
     )
 

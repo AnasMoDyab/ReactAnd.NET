@@ -20,7 +20,7 @@ export default class CommentStore {
                 .withAutomaticReconnect()
                 .configureLogging(LogLevel.Information)
                 .build();
-
+               
             this.hubConnection.start().catch(error => console.log('Error establishing the connection: ', error));
 
             this.hubConnection.on('LoadComments', (comments: ChatComment[]) => {
