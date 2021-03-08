@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kpmxmu5uHmsYXAB+udOl+xsZ3bAIuey4EttsP3ILEUKI71g4x0/jDA/It6ejj/r/80cGaO26s9viu4x5dtj4CA==",
+  "dgSpecHash": "AudWvEY4qnfyS8nOeD1Ww5yoEA3Wb42gzvq2Jo6fzkDId73FQPLzJk9dBEZSlQFbrV3S8f+aV8SrHH2PqoTecA==",
   "success": true,
   "projectFilePath": "D:\\Udemy\\.NET And React\\Reactivities\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,8 @@
     "C:\\Users\\anasd\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\npgsql\\5.0.2\\npgsql.5.0.2.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\5.0.2\\npgsql.entityframeworkcore.postgresql.5.0.2.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\nwebsec.aspnetcore.core\\3.0.0\\nwebsec.aspnetcore.core.3.0.0.nupkg.sha512",
+    "C:\\Users\\anasd\\.nuget\\packages\\nwebsec.aspnetcore.middleware\\3.0.0\\nwebsec.aspnetcore.middleware.3.0.0.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\anasd\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",

@@ -41,6 +41,35 @@ namespace API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseMiddleware<ExceptionMiddleware>();
+            app.UseXContentTypeOptions();
+            app.UseReferrerPolicy(opt => opt.NoReferrer());
+            app.UseXXssProtection(opt => opt.EnabledWithBlockMode());
+            app.UseXfo(opt => opt.Deny());
+            app.UseCsp(opt => opt
+                .BlockAllMixedContent()
+                .StyleSources(s => s.Self().CustomSources(
+                    "https://fonts.googleapis.com",
+                    "sha256-2aahydUs+he2AO0g7YZuG67RGvfE9VXGbycVgIwMnBI="
+                   
+                ))
+                .FontSources(s => s.Self().CustomSources(
+                    "https://fonts.gstatic.com", "data:"
+                ))
+                .FormActions(s => s.Self())
+                .FrameAncestors(s => s.Self())
+                .ImageSources(s => s.Self().CustomSources(
+                    "https://res.cloudinary.com", 
+                    "https://www.facebook.com",
+                    "data:"
+                    ))
+                .ScriptSources(s => s.Self()
+                    .CustomSources(
+                        "sha256-owzsgyAQ1KpSMml98yhMEYRAhX2ReamM7BQSV798U6g=",
+                        "https://connect.facebook.net",
+                        "sha256-aSq+V4JIa68vL7mSy5U21HkI7z5YveIYDLTokgIbOPg="
+                        
+                    ))
+            );
 
             if (env.IsDevelopment())
             {
