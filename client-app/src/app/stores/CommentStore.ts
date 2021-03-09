@@ -14,13 +14,13 @@ export default class CommentStore {
     createHubConnection = (activityId: string) => {
         if (store.activityStore.selectedActivity) {
             this.hubConnection = new HubConnectionBuilder()
-                .withUrl(process.env.REACT_APP_CHAT_URL + 'activityId=' + activityId, {
+                .withUrl(process.env.REACT_APP_CHAT_URL + '?activityId=' + activityId, {
                     accessTokenFactory: () => store.userStore.user?.token!
                 })
                 .withAutomaticReconnect()
                 .configureLogging(LogLevel.Information)
                 .build();
-               
+
             this.hubConnection.start().catch(error => console.log('Error establishing the connection: ', error));
 
             this.hubConnection.on('LoadComments', (comments: ChatComment[]) => {
@@ -35,7 +35,7 @@ export default class CommentStore {
             this.hubConnection.on('ReceiveComment', (comment: ChatComment) => {
                 runInAction(() => {
                     comment.createAt = new Date(comment.createAt);
-                    this.comments.unshift(comment) // add comment at top in array 
+                    this.comments.unshift(comment)
                 });
             })
         }
