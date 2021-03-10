@@ -16,7 +16,7 @@ import { ActivityFormValues } from '../../../app/models/activity';
 
 export default observer(function ActivityForm() {
     const history = useHistory();
-    const { activityStore } = useStore();
+    const { activityStore, commonStore } = useStore();
     const { createActivity, updateActivity, loadActivity, loadingInitial } = activityStore;
     const { id } = useParams<{ id: string }>();
 
@@ -50,7 +50,7 @@ export default observer(function ActivityForm() {
     if (loadingInitial) return <LoadingComponent content='Loading activity...' />
 
     return (
-        <Segment clearing>
+        <Segment clearing className={commonStore.darkMode ? 'darkeMode ' : "" }>
             <Header content='Activity Details' sub color='teal' />
             <Formik 
                 validationSchema={validationSchema}

@@ -1,6 +1,5 @@
-import Reac from 'react';
+import React from 'react';
 import { Button, Icon, Item, Label, Segment } from 'semantic-ui-react';
-import { useStore } from '../../../app/stores/store';
 import {Activity} from '../../../app/models/activity'
 import { Link } from 'react-router-dom';
 import {format } from 'date-fns';
@@ -13,20 +12,33 @@ interface Props {
 export default function ActivityListItem({activity}: Props){
 
     return( 
-        <Segment.Group>
-            <Segment>
+        <Segment.Group >
+            <Segment  >
                  {activity.isCancelled && 
                     <Label attached='top' color='red' content='Cancelled ' style={{textAlign: 'center'}}/>
                  
                  }
                 <Item.Group>
-                    <Item>
-                        <Item.Image style={{marginBottom: 3}}  size='tiny' circular src={activity.host?.image || '/assets/user.png'} />
+                    <Item >
+                        <Item.Image
+                         style={{marginBottom: 3}}
+                           size='tiny' 
+                           circular 
+                           src={activity.host?.image || '/assets/user.png'}
+                           
+                           />
                         <Item.Content>
-                            <Item.Header as={Link} to={`/activities/${activity.id}`}>
+                            <Item.Header
+                             as={Link} 
+                             to={`/activities/${activity.id}`}
+                             
+                             >
                                 {activity.title}
                             </Item.Header>
-                            <Item.Description>Hoset by<Link to={`/profiles/${activity.hostUsername}`}> {activity.host?.displayName}</Link> </Item.Description>
+                            <Item.Description
+                            
+                            
+                            >Hoset by<Link to={`/profiles/${activity.hostUsername}`}> {activity.host?.displayName}</Link> </Item.Description>
                             {activity.isHost && (
                                 <Item.Description>
                                     <Label basic color ='orange' >
@@ -46,7 +58,7 @@ export default function ActivityListItem({activity}: Props){
                     </Item>
                 </Item.Group>
             </Segment>
-            <Segment>
+            <Segment >
                 <span>
                     <Icon name='clock' /> {format(activity.date!, 'dd MM yyyy h:mm aa')}
                     <Icon name='marker' />{activity.venue}
@@ -55,7 +67,7 @@ export default function ActivityListItem({activity}: Props){
             <Segment secondary>
                <ActivityListItemAttendee attendees ={activity.attendees!} />
             </Segment>
-            <Segment clearing>
+            <Segment clearing >
                 <span>{activity.description}</span>
                 <Button 
                     as={Link}

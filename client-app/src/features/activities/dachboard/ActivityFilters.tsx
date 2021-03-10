@@ -6,14 +6,15 @@ import ActivityStore from '../../../app/stores/activityStore';
 import { useStore } from '../../../app/stores/store';
 
 export default observer (function ActivityFilters() {
-    const {activityStore: {predicate, setPredicate}} = useStore();
+    const {activityStore: {predicate, setPredicate}, commonStore} = useStore();
 
     return (
         <>
-            <Menu vertical size='large' style={{ width: '100%', marginTop: 25 }}>
-                <Header icon='filter' attached color='teal' content='Filters' />
+            <Menu vertical size='large'  className={commonStore.darkMode ? 'darkeMode items' : "" } style={{ width: '100%', marginTop: 25 }}>
+                <Header className={commonStore.darkMode ? 'darkeMode' : "" } icon='filter' attached color='teal' content='Filters' />
                 <Menu.Item
                     content='All Activites'
+                   
                     active= {predicate.has('all')}
                     onClick={()=> setPredicate('all', 'true')} />
                 <Menu.Item 
@@ -27,6 +28,7 @@ export default observer (function ActivityFilters() {
                 </Menu>
             <Header />
             <Calendar 
+                className={commonStore.darkMode ? 'darkeMode calander ' : "" }
                 onChange={(date) => setPredicate('startDate', date as Date)}
                 value={predicate.get('startDate') || new Date()}
             />

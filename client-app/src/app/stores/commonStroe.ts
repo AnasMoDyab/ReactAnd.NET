@@ -8,6 +8,7 @@ export default class CommonStore {
     error: ServerErrors | null = null;
     token: string | null= window.localStorage.getItem('jwt');
     appLoaded = false;
+    darkMode = false;
 
 
     constructor(){
@@ -36,6 +37,9 @@ export default class CommonStore {
 
     setApploaded = ()=> {
         this.appLoaded= true;
+    }
+    setDarkMode= ()=> {
+        this.darkMode= !this.darkMode;
     }
 
 }

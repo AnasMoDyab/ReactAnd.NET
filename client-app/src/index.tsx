@@ -19,7 +19,7 @@ ReactDOM.render(
   <StoreContext.Provider value={store}>
       <Router history ={history}>
          <ScrollToTop />
-            <App />
+            <App  />
       </Router>
   </StoreContext.Provider>
  

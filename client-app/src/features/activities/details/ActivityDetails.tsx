@@ -29,15 +29,18 @@ const {selectedActivity: activity, loadActivity, loadingInitial, clearSelectActi
 if(loadingInitial || !activity) return <LoadingComponent />;
 
     return (
-        <Grid>
-            <Grid.Column width={10}>
+        <Grid  container stackable>
+            <Grid.Row columns={2}>
+                 <Grid.Column computer={5} mobile={16}>
+                     <ActivityDetailedSidebar activity={activity!} />
+                </Grid.Column>
+                <Grid.Column computer={10} mobile={16}>
                 <ActivityDetailedHeader  activity={activity}/>
-                <ActivityDetailedInfo activity={activity} />
-                <ActivityDetailedChat activityId={activity.id} />
-            </Grid.Column>
-            <Grid.Column width={6}>
-                <ActivityDetailedSidebar activity={activity!} />
-            </Grid.Column>
+                    <ActivityDetailedInfo activity={activity} />
+                    <ActivityDetailedChat activityId={activity.id} />
+                    
+                </Grid.Column>
+            </Grid.Row>
         </Grid>
     );
 

@@ -47,12 +47,12 @@ export default observer(function ProfilePhotos({ profile }: Props) {
                     {addPhotoMode ? (
                         <PhotoUploadWidget uploadPhoto={handlePhotoUpload} loading={uploading} />
                     ) : (
-                            <Card.Group itemsPerRow={5}>
+                            <Card.Group >
                                 {profile.photos?.map(photo => (
                                     <Card key={photo.id}>
-                                        <Image src={photo.url} />
+                                        <Image src={photo.url} size='massive' />
                                         {isCurrentUser && (
-                                            <Button.Group fluid widths={2}>
+                                            <Button.Group   widths={2}>
                                                 <Button 
                                                     basic
                                                     color='green'

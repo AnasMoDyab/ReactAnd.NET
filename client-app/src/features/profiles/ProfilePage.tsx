@@ -6,6 +6,7 @@ import LoadingComponent from '../../app/layout/LoadingComponent';
 import { useStore } from '../../app/stores/store';
 import ProfileContent from './ProfileContent';
 import ProfileHeader from './ProfileHeader';
+import '../../app/layout/styles.css';
 
 export default observer(function ProfilePage() {
     const { username } = useParams<{ username: string }>();
@@ -24,14 +25,17 @@ export default observer(function ProfilePage() {
     if (loadingProfile) return <LoadingComponent content='Loading profile...' />
 
     return (
-        <Grid>
-            <Grid.Column width={16}>
+        <Grid stackable>
                 {profile &&
-                    <>
-                        <ProfileHeader profile={profile} />
-                        <ProfileContent profile={profile} />
-                    </>}
-            </Grid.Column>
+                    <Grid.Row>
+                        <Grid.Column computer={16} mobile={16}>
+                             <ProfileHeader profile={profile} />
+                        </Grid.Column>
+                        <Grid.Column style={{marginTop:20}} computer={16} mobile={16}>
+                             <ProfileContent profile={profile} />
+                        </Grid.Column>
+                    </Grid.Row>}
+         
         </Grid>
     )
  })

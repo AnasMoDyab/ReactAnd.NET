@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {  Container } from 'semantic-ui-react';
+import {  Container} from 'semantic-ui-react';
 import NavBar from '../layout/NavBar'
 import ActivityDashboard from '../../features/activities/dachboard/ActivityDashboard'
 import { observer } from 'mobx-react-lite';

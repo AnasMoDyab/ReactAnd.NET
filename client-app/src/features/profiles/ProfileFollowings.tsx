@@ -11,16 +11,16 @@ export default observer(function ProfileFollowings() {
 
     return (
         <Tab.Pane loading={loadingFollowings}>
-            <Grid>
-                <Grid.Column width='16'>
+            <Grid stackable>
+                <Grid.Column computer={16} mobile={10}>
                     <Header
                         floated='left'
                         icon='user'
                         content={activeTab===3 ? `People following ${profile!.displayName}` : `People ${profile?.displayName} follower` }
                     />
                 </Grid.Column>
-                <Grid.Column width='16'>
-                    <Card.Group itemsPerRow={4}>
+                <Grid.Column computer={16} mobile={10}>
+                    <Card.Group >
                         {followings.map(profile => (
                             <ProfileCard key={profile.username} profile={profile} />
                         ))}

@@ -1,0 +1,7 @@
+.wrapped{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 18px;
+ 
+  }
