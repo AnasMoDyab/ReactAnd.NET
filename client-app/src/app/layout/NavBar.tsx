@@ -9,7 +9,7 @@ export default observer(function NavBar() {
     const { userStore: { user, logout } } = useStore();
  
     return (
-        <Menu  fixed='top' stackable inverted pointing vertica> 
+        <Menu  fixed='top' inverted> 
             <Container >
                 <Menu.Item as={NavLink} exact to='/' header>
                     <img src='/assets/logo.png' alt='logo' style={{ marginRight: '10px' }} />
